@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Form register</title>
+  <style>
+    *,
+    html {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: url("assets/background-web.jpg") no-repeat;
+    }
+
+    .container {
+      max-width: 80%;
+      margin: 20px auto;
+      padding: 15px;
+      display: grid;
+      grid-template-areas:
+        "title title"
+        "first-name first-name"
+        "last-name last-name"
+        "email email"
+        "phone-number phone-number"
+        "password password"
+        "btn btn"
+        "footer footer";
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      border: 1px solid #ddd;
+      backdrop-filter: blur(12px);
+      color: #ddd;
+    }
+
+    .box-title {
+      grid-area: title;
+      margin-top: 20px;
+      margin-bottom: 40px;
+    }
+
+    .box-title .title {
+      font-size: 2.5em;
+      font-weight: 600;
+      text-align: center;
+      color: #ddd;
+      text-shadow: 5px 2px 7px rgba(14, 14, 14, 0.452);
+    }
+
+    .field {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    label {
+      font-size: 1.1em;
+      text-transform: capitalize;
+    }
+
+    .field-input {
+      padding: 8px;
+      border-radius: 3px;
+      font-size: 1.2em;
+      border: 1px solid rgba(163, 163, 163, 0.753);
+    }
+
+    .field-first-name {
+      grid-area: first-name;
+    }
+
+    .field-last-name {
+      grid-area: last-name;
+    }
+
+    .field-email {
+      grid-area: email;
+    }
+
+    .field-phone-number {
+      grid-area: phone-number;
+    }
+
+    .field-password {
+      grid-area: password;
+    }
+
+    .box-button {
+      grid-area: btn;
+      margin-top: 25px;
+    }
+
+    .box-button .btn {
+      width: 100%;
+      padding: 9px;
+      border: none;
+      background-color: lightblue;
+    }
+
+    footer {
+      grid-area: footer;
+      margin-top: 30px;
+    }
+
+    footer .footer-content {
+      text-align: center;
+      font-size: 1.2em;
+      margin-top: 20px;
+    }
+
+    footer .footer-link {
+      color: #ddd;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    footer .footer-link:hover {
+      transition: 1s ease-in;
+      cursor: pointer;
+      text-decoration: underline;
+    }
+
+    /* Responsive Breakpoints */
+    @media screen and (min-width: 668px) {
+      .container {
+        grid-template-areas:
+          "title title"
+          "first-name last-name"
+          "email phone-number"
+          "password password"
+          "btn btn"
+          "footer footer";
+      }
+    }
+
+    @media screen and (min-width: 1024px) {
+      .container {
+        width: 50%;
+      }
+    }
+
+    @media screen and (min-width: 1400px) {
+      .container {
+        width: 30%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <form action="" class="container">
+    <section class="box-title">
+      <h1 class="title">Register</h1>
+    </section>
+    <section class="field field-first-name">
+      <label for="first-name"> first name </label>
+      <input type="text" id="first-name" class="field-input" required />
+    </section>
+
+    <section class="field field-last-name">
+      <label for="last-name"> last name </label>
+      <input type="text" id="last-name" class="field-input" required />
+    </section>
+
+    <section class="field field-email">
+      <label for="email"> email </label>
+      <input type="email" id="email" class="field-input" required />
+    </section>
+
+    <section class="field field-phone-number">
+      <label for="phone-number"> phone number </label>
+      <input type="tel" id="phone-number" class="field-input" required />
+    </section>
+
+    <section class="field field-password">
+      <label for="password"> password </label>
+      <input type="password" id="password" class="field-input" required />
+    </section>
+
+    <section class="box-button">
+      <button class="btn">Submit</button>
+    </section>
+
+    <footer>
+      <hr />
+      <p class="footer-content">
+        Sudah punya akun, silakan
+        <a href="#" class="footer-link">Login.</a>
+      </p>
+    </footer>
+  </form>
+</body>
+
+</html>
